@@ -2,28 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>goit-js-hw-11</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>Home Work 11</title>
     <script type="module" crossorigin src="/goit-js-hw-11/index.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-Cgc9PhsO.js">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-Dr4k8ETB.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-0-2e_0pS.css">
   </head>
   <body>
-    <div class="container">
-      <header>
-        <form class="search-form" autocomplete="off">
-          <input
-            type="search"
-            name="search"
-            placeholder="Search here..."
-            autofocus
-          />
-          <button type="submit">Search</button>
-        </form>
-      </header>
+    <main>
+      <form class="form">
+        <input
+          type="text"
+          id="input"
+          class="text-search"
+          placeholder="Search all images..."
+        />
+        <button type="submit" class="button-search">Search</button>
+      </form>
+      <div class="loader-text hidden">
+        <span class="loader">Loading images, please wait...</span>
+      </div>
       <ul class="gallery"></ul>
-    </div>
+    </main>
+
   </body>
 </html>
