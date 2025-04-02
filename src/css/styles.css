@@ -1,3 +1,38 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 button {
   border: none;
   background-color: #4e75ff;
@@ -11,6 +46,15 @@ button {
   line-height: 16px;
   letter-spacing: 4%;
   color: floralwhite;
+}
+
+.tittle {
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 1);
 }
 
 .text-search {
@@ -38,14 +82,14 @@ button {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  row-gap: 20px;
   justify-content: center;
-  width: 100%;
+  padding: 20px 0;
 }
 
 .gallery-image {
-  width: 280px;
-  height: 187px;
+  flex-basis: calc((100% - 80px) / 4);
+  min-width: 360px;
 }
 
 input:hover,
@@ -67,11 +111,14 @@ button:hover {
 }
 
 .photo-card {
-  width: 250px;
-  border: 1.5px solid indigo;
+  margin-left: 20px;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 1px solid rgba(128, 128, 128, 1);
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 2px 2px 10px rgba(133, 97, 97, 0.1);
+  box-shadow: 2px 2px 10px #8561611a;
   background-color: #fff;
 }
 
@@ -82,7 +129,23 @@ button:hover {
 }
 
 .info {
-  padding: 10px;
-  font-size: 16px;
-  color: indigo;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-top: none;
+  padding: 10px 0;
+}
+
+.block {
+  text-align: center;
+}
+
+.amount {
+  font-size: 12px;
+  font-family: Montserrat;
+  font-weight: 400;
+  color: rgba(46, 47, 66, 1);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 }

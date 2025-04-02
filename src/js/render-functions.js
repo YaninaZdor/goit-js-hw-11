@@ -17,7 +17,22 @@ export function imageTemplate(img) {
     comments,
     downloads,
   } = img;
-  const markup = `<li class="photo-card"><a class="gallery-link" href="${largeImageURL}"><img class="gallery-image" src="${webformatURL}" alt="${tags}"/></a><div class="info"><p>Likes: <span class="likes">${likes}</span></p><p>Views: <span class="views">${views}</span></p><p>Comments: <span class="comments">${comments}</span></p><p>Downloads: <span class="downloads">${downloads}</span></p></div></li>`;
+  const markup = `<li class="photo-card"><a class="gallery-link" href="${largeImageURL}"><img class="gallery-image" src="${webformatURL}" alt="${tags}"/></a><div class="info"><div class="block">
+  <h2 class="tittle">Likes</h2>
+  <p class="amount">${likes}</p>
+</div>
+<div class="block">
+  <h2 class="tittle">Views</h2>
+  <p class="amount">${views}</p>
+</div>
+<div class="block">
+  <h2 class="tittle">Comments</h2>
+  <p class="amount">${comments}</p>
+</div>
+<div class="block">
+  <h2 class="tittle">Downloads</h2>
+  <p class="amount">${downloads}</p>
+</div></div></li>`;
   return markup;
 }
 
