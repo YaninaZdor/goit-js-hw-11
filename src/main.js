@@ -1,49 +1,23 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { getImagesByQuery } from './pixabay-api';
-import {
-  createGallery,
-  clearGallery,
-  showLoader,
-  hideLoader,
-} from './render-functions';
+import { createImages } from './js/pixabay-api';
+import { hideLoader, showLoader } from './js/render-functions';
+import { refs } from './js/pixabay-api';
 
-const form = document.querySelector('.search-form');
-
-form.addEventListener('submit', async event => {
-  event.preventDefault();
-
-  const query = event.target.elements.searchQuery.value.trim();
+refs.form.addEventListener('submit', e => {
+  e.preventDefault();
+  const query = e.target.elements.input.value.trim();
+  showLoader();
 
   if (!query) {
-    iziToast.info({
-      title: 'Інформація',
-      message: 'Будь ласка, введіть пошуковий запит.',
+    hideLoader();
+    iziToast.error({
+      title: 'Error',
+      message: 'Please enter a search query.',
+      position: 'topRight',
     });
+    refs.gallery.classList.add('hidden');
     return;
   }
-
-  showLoader();
-  clearGallery();
-
-  try {
-    const images = await getImagesByQuery(query);
-
-    if (images.length === 0) {
-      iziToast.error({
-        title: 'Помилка',
-        message: 'Не знайдено зображень за вашим запитом.',
-      });
-    } else {
-      createGallery(images);
-    }
-  } catch (error) {
-    iziToast.error({
-      title: 'Помилка',
-      message: 'Сталася помилка при отриманні зображень.',
-    });
-  } finally {
-    hideLoader();
-    form.reset();
-  }
+  createImages(query);
 });
