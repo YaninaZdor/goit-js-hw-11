@@ -52,6 +52,7 @@ export function createImages(query) {
 
     .catch(error => {
       hideLoader();
+      refs.gallery.innerHTML = '';
       iziToast.error({
         title: 'Error',
         message: `❌ Error fetching images. Please try again!`,

@@ -50,3 +50,13 @@ export function imagesTemplate(arr) {
   hideLoader();
   return arr.map(imageTemplate).join('');
 }
+
+export function clearGallery() {
+  refs.gallery.innerHTML = '';
+}
+
+export function imagesTemplate(arr) {
+  hideLoader();
+  clearGallery();
+  return arr.map(imageTemplate).join('');
+}
