@@ -46,11 +46,6 @@ export function hideLoader() {
   refs.gallery.classList.remove('hidden');
 }
 
-export function imagesTemplate(arr) {
-  hideLoader();
-  return arr.map(imageTemplate).join('');
-}
-
 export function clearGallery() {
   refs.gallery.innerHTML = '';
 }
